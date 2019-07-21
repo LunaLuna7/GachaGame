@@ -33,7 +33,7 @@ public class Attacker : MonoBehaviour
         rb.velocity = transform.forward * speed;
         model.transform.rotation=transform.rotation;
         moveTimer += Time.deltaTime;
-        model.transform.Rotate(0,0,Mathf.Cos(moveTimer*6)*10);
+        model.transform.Rotate(0,0,Mathf.Cos(moveTimer*10)*7);
 
         if(attacking) {
           model.transform.Rotate(-30+attackTimer*60,0,0);

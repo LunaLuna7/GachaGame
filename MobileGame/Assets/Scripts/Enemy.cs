@@ -13,16 +13,17 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         clickHandler = GetComponent<ClickHandlerBase>();
-        UI = transform.Find("UI").gameObject;
         model = transform.Find("Model").gameObject;
+        UI = model.transform.Find("UI").gameObject;
         UpdateLifeDisplay();
           float size = .3f;
         for(int i = 0;i<life;i++) {
+          float d = Mathf.Abs(i-life/2);
           GameObject pip = Instantiate(healthPip,
-            transform.position+new Vector3(-.5f+size/2+i/life,1+UI.transform.position.y,0),
+            transform.position+new Vector3(-.5f+size/2+i/life,.9f+UI.transform.position.y-d/life,0),
             Quaternion.identity
           );
-          pip.transform.localScale *= size;
+          pip.transform.localScale *= (size+.2f-d*.4f);
           pip.transform.parent = UI.transform;
         }
     }
@@ -46,11 +47,14 @@ public class Enemy : MonoBehaviour
       if(life>=0)
        Destroy(UI.transform.GetChild(Mathf.FloorToInt(life)).gameObject);
       UpdateLifeDisplay();
-      clickHandler?.HandleClick();
       // transform.localScale *= 1.2f;
       if(life<=0) {
+        clickHandler?.HandleDie();
         //die event
         // Destroy(gameObject);
+      } else {
+      clickHandler?.HandleClick();
+
       }
     }
 

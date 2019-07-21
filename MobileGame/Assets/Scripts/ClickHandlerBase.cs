@@ -7,6 +7,9 @@ public class ClickHandlerBase : MonoBehaviour
     virtual public void HandleClick() {
 
     }
+    virtual public void HandleDie() {
+      
+    }
     // Start is called before the first frame update
     void Start()
     {

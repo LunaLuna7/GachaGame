@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
             z
           );
           GameObject en = Instantiate(enemy, pos, Quaternion.identity);
-          en.GetComponent<Enemy>().life = Random.Range(1,3);
+          en.GetComponent<Enemy>().life = Random.Range(1,4);
         }
     }
 }
