@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
+  public EnemyStats enemyStats;
   private GameObject player;
   private Rigidbody rb;
-  public float speed = 1;
   public bool attacking = false;
-  public float attackSpeed = 1;
   private float attackTimer = 0.2f;
-  public float damage = 5;
   private GameObject model;
   private float moveTimer=0;
 
@@ -30,7 +28,7 @@ public class Attacker : MonoBehaviour
         diff.y = 0;
         
         transform.rotation = Quaternion.LookRotation(diff);
-        rb.velocity = transform.forward * speed;
+        rb.velocity = transform.forward * enemyStats.speed;
         model.transform.rotation=transform.rotation;
         moveTimer += Time.deltaTime;
         model.transform.Rotate(0,0,Mathf.Cos(moveTimer*10)*7);
@@ -42,14 +40,14 @@ public class Attacker : MonoBehaviour
           );
           attackTimer -= Time.deltaTime;
           if(attackTimer<=0) {
-            attackTimer = attackSpeed;
+            attackTimer = enemyStats.attackSpeed;
             Attack();
           }
         }
     }
 
     void Attack() {
-      player.GetComponent<HealthManager>().Heal(-damage);
+      player.GetComponent<HealthManager>().Heal(-enemyStats.damage);
       model.transform.localScale *= 1.2f;
     }
 

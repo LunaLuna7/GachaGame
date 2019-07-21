@@ -134,10 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e250c832a9e0d4c648f7f9fe57aae567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  enemyStats: {fileID: 11400000, guid: 8762d569dc785604aba1a8df0a5c9805, type: 2}
   attacking: 0
-  attackSpeed: 0.5
-  damage: 5
   onPlayerDamaged: {fileID: 0}
 --- !u!1001 &865654472511502427
 PrefabInstance:
