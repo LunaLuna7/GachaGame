@@ -11,10 +11,8 @@ public class Enemy : MonoBehaviour
         UpdateLifeDisplay();
           float size = .3f;
         for(int i = 0;i<life;i++) {
-          GameObject test = Instantiate(
-            GameObject.CreatePrimitive(PrimitiveType.Cube),
-            transform.position+new Vector3(-.5f+size/2+i/life,1,0),
-            Quaternion.identity);
+          GameObject test = GameObject.CreatePrimitive(PrimitiveType.Cube);
+          test.transform.position= transform.position+new Vector3(-.5f+size/2+i/life,1,0);
           test.GetComponent<BoxCollider>().enabled = false;
           test.transform.localScale *= size;
           test.transform.parent = transform;
