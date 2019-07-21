@@ -25,21 +25,25 @@ public class Enemy : MonoBehaviour
     void Update()
     {
       transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, .5f);
+      if(life<=0&&transform.localScale.x<1.1f) {
+        Destroy(gameObject);
+      }
     }
 
     void UpdateLifeDisplay() {
-      
     }
 
     void Damage() {
       //damage event
       life--;
       transform.localScale *= 2f;
+      if(life>=0)
+       Destroy(transform.GetChild(Mathf.FloorToInt(life)).gameObject);
       UpdateLifeDisplay();
       // transform.localScale *= 1.2f;
       if(life<=0) {
         //die event
-        Destroy(gameObject);
+        // Destroy(gameObject);
       }
     }
 
