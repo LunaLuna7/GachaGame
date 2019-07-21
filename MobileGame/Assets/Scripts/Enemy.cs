@@ -5,9 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
   public float life = 3;
+  private GameObject UI;
     // Start is called before the first frame update
     void Start()
     {
+        UI = transform.Find("UI").gameObject;
         UpdateLifeDisplay();
           float size = .3f;
         for(int i = 0;i<life;i++) {
@@ -15,7 +17,7 @@ public class Enemy : MonoBehaviour
           test.transform.position= transform.position+new Vector3(-.5f+size/2+i/life,1,0);
           test.GetComponent<BoxCollider>().enabled = false;
           test.transform.localScale *= size;
-          test.transform.parent = transform;
+          test.transform.parent = UI.transform;
         }
     }
 
@@ -36,7 +38,7 @@ public class Enemy : MonoBehaviour
       life--;
       transform.localScale *= 2f;
       if(life>=0)
-       Destroy(transform.GetChild(Mathf.FloorToInt(life)).gameObject);
+       Destroy(UI.transform.GetChild(Mathf.FloorToInt(life)).gameObject);
       UpdateLifeDisplay();
       // transform.localScale *= 1.2f;
       if(life<=0) {

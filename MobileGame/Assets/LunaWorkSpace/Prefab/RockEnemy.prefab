@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2543908867555470228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_Children:
   - {fileID: 2543908867618019633}
   m_Father: {fileID: 0}
@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 2543908867618019635}
   - component: {fileID: 2543908867618019636}
   - component: {fileID: 2543908867618019637}
-  - component: {fileID: 2543908867618019638}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -1073,20 +1072,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &2543908867618019638
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543908867618019639}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &2543908867691587486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1083,6 @@ GameObject:
   - component: {fileID: 2543908867691587482}
   - component: {fileID: 2543908867691587483}
   - component: {fileID: 2543908867691587484}
-  - component: {fileID: 2543908867691587485}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1165,19 +1149,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2543908867691587485
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543908867691587486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2543908867753029564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1160,6 @@ GameObject:
   - component: {fileID: 2543908867753029560}
   - component: {fileID: 2543908867753029561}
   - component: {fileID: 2543908867753029562}
-  - component: {fileID: 2543908867753029563}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -1256,19 +1226,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2543908867753029563
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543908867753029564}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2543908867790579818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1237,6 @@ GameObject:
   - component: {fileID: 2543908867790579814}
   - component: {fileID: 2543908867790579815}
   - component: {fileID: 2543908867790579816}
-  - component: {fileID: 2543908867790579817}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -1347,19 +1303,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2543908867790579817
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543908867790579818}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2543908868103620400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1314,6 @@ GameObject:
   - component: {fileID: 2543908868103620396}
   - component: {fileID: 2543908868103620397}
   - component: {fileID: 2543908868103620398}
-  - component: {fileID: 2543908868103620399}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -1438,16 +1380,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2543908868103620399
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543908868103620400}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
