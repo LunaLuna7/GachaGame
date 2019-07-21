@@ -21,10 +21,13 @@ public class Spawner : MonoBehaviour
           timer = time;
           float width = 6f;
           float height = 4f;
+          float angle = Random.Range(0,360);
+          float x = Mathf.Cos(angle)*width;
+          float z = Mathf.Sin(angle)*height;
           Vector3 pos = new Vector3(
-            Random.Range(-width,width),
+            x,
             0,
-            Random.Range(-height,height)
+            z
           );
           GameObject en = Instantiate(enemy, pos, Quaternion.identity);
           en.GetComponent<Enemy>().life = Random.Range(1,3);

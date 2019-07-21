@@ -11,7 +11,7 @@ public class Attacker : MonoBehaviour
   public float attackSpeed = 1;
   private float attackTimer = 0.2f;
   public float damage = 5;
-  private GameObject Model;
+  private GameObject model;
 
   public GameEvent onPlayerDamaged;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class Attacker : MonoBehaviour
     {
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
-        Model = transform.Find("Model").gameObject;
+        model = transform.Find("Model").gameObject;
     }
 
     // Update is called once per frame
@@ -27,15 +27,15 @@ public class Attacker : MonoBehaviour
     {
         Vector3 diff = player.transform.position - transform.position;
         diff.y = 0;
-        rb.velocity = diff.normalized * speed;
         
-        transform.rotation = Quaternion.LookRotation(rb.velocity);
-        Model.transform.rotation=transform.rotation;
-        Model.transform.Rotate(0,0,Mathf.Cos(Time.fixedTime*6)*10);
+        transform.rotation = Quaternion.LookRotation(diff);
+        rb.velocity = transform.forward * speed;
+        model.transform.rotation=transform.rotation;
+        model.transform.Rotate(0,0,Mathf.Cos(Time.fixedTime*6)*10);
 
         if(attacking) {
-          Model.transform.Rotate(-30+attackTimer*60,0,0);
-          Model.transform.localPosition = new Vector3(
+          model.transform.Rotate(-30+attackTimer*60,0,0);
+          model.transform.localPosition = new Vector3(
             0,0,-.5f+attackTimer*1
           );
           attackTimer -= Time.deltaTime;
@@ -48,7 +48,7 @@ public class Attacker : MonoBehaviour
 
     void Attack() {
       player.GetComponent<HealthManager>().Heal(-damage);
-      transform.localScale *= 1.2f;
+      model.transform.localScale *= 1.2f;
     }
 
     void OnCollisionEnter(Collision col) {
