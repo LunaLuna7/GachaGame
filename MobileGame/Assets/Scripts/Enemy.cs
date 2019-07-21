@@ -8,9 +8,11 @@ public class Enemy : MonoBehaviour
   private GameObject UI;
   private GameObject model;
   public GameObject healthPip;
+  private ClickHandlerBase clickHandler;
     // Start is called before the first frame update
     void Start()
     {
+        clickHandler = GetComponent<ClickHandlerBase>();
         UI = transform.Find("UI").gameObject;
         model = transform.Find("Model").gameObject;
         UpdateLifeDisplay();
@@ -44,6 +46,7 @@ public class Enemy : MonoBehaviour
       if(life>=0)
        Destroy(UI.transform.GetChild(Mathf.FloorToInt(life)).gameObject);
       UpdateLifeDisplay();
+      clickHandler?.HandleClick();
       // transform.localScale *= 1.2f;
       if(life<=0) {
         //die event

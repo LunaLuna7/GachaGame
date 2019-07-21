@@ -20,7 +20,7 @@ public class GameEvent : ScriptableObject
     ///
     public void RegisterListener(GameEventListener listener)
     {
-        listeners.Add(listener);            
+        listeners.Add(listener);
     }
 
     //-////////////////////////////////////////////////////

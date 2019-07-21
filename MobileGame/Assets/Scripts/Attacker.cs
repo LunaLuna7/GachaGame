@@ -12,6 +12,7 @@ public class Attacker : MonoBehaviour
   private float attackTimer = 0.2f;
   public float damage = 5;
   private GameObject model;
+  private float moveTimer=0;
 
   public GameEvent onPlayerDamaged;
     // Start is called before the first frame update
@@ -31,7 +32,8 @@ public class Attacker : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(diff);
         rb.velocity = transform.forward * speed;
         model.transform.rotation=transform.rotation;
-        model.transform.Rotate(0,0,Mathf.Cos(Time.fixedTime*6)*10);
+        moveTimer += Time.deltaTime;
+        model.transform.Rotate(0,0,Mathf.Cos(moveTimer*6)*10);
 
         if(attacking) {
           model.transform.Rotate(-30+attackTimer*60,0,0);
