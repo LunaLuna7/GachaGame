@@ -11,6 +11,7 @@ public class Attacker : MonoBehaviour
   private float attackTimer = 0.2f;
   private GameObject model;
   private float moveTimer=0;
+  private Vector3 modelPosition;
 
   public GameEvent onPlayerDamaged;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class Attacker : MonoBehaviour
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
         model = transform.Find("Model").gameObject;
+        modelPosition = model.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -35,8 +37,8 @@ public class Attacker : MonoBehaviour
 
         if(attacking) {
           model.transform.Rotate(-30+attackTimer*60,0,0);
-          model.transform.localPosition = new Vector3(
-            0,0,-.5f+attackTimer*1
+          model.transform.localPosition = modelPosition+ new Vector3(
+            0,0,(-.5f+attackTimer)*1
           );
           attackTimer -= Time.deltaTime;
           if(attackTimer<=0) {
