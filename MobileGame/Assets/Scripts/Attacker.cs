@@ -38,7 +38,7 @@ public class Attacker : MonoBehaviour
         if(attacking) {
           model.transform.Rotate(-30+attackTimer*60,0,0);
           model.transform.localPosition = modelPosition+ new Vector3(
-            0,0,(-.5f+attackTimer)*1
+            0,0,(-.5f+attackTimer)*.5f
           );
           attackTimer -= Time.deltaTime;
           if(attackTimer<=0) {

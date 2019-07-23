@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
   private Vector3 startPos;
   [SerializeField]
   private FloatReference health;
+  public GameEvent onGameStart;
     // Start is called before the first frame update
     void Start()
     {
+        onGameStart.Raise();
         model = transform.Find("Model").gameObject;
         startPos = model.transform.position;
     }

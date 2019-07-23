@@ -11,10 +11,17 @@ public class TreeSystem : MonoBehaviour
 
     [SerializeField]
     private float timeToGrow;
+    [SerializeField]
+    private float treeCooldown;
 
     public LayerMask layerToHit;
+    public GameEvent onTreePlace;
+    public GameEvent onCanPlaceTree;
+    private bool canPlaceTree = true;
 
     Camera camera;
+
+    public Placeable selectedPlaceable;
 
     private void Start() 
     {
@@ -34,7 +41,13 @@ public class TreeSystem : MonoBehaviour
 
     private void PlantTree(Vector3 pos)
     {
+        if(!selectedPlaceable.available)return;
+        selectedPlaceable.Purchase();
+        // if(!canPlaceTree)return;
         GameObject i = Instantiate(youngTree, pos, Quaternion.identity);
+        onTreePlace.Raise();
+        canPlaceTree = false;
+        // StartCoroutine(TreeTimer());
         StartCoroutine(GrowTree(i));
     }
 
@@ -45,4 +58,10 @@ public class TreeSystem : MonoBehaviour
         Destroy(youngTree);
         Instantiate(oldTree, pos, Quaternion.identity);
     }
+
+    // IEnumerator TreeTimer() {
+    //   yield return new WaitForSeconds(treeCooldown);
+    //     canPlaceTree = true;
+    //     onCanPlaceTree.Raise();
+    // }
 }

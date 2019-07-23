@@ -63,12 +63,12 @@ public class Enemy : MonoBehaviour
         //die event
         // Destroy(gameObject);
       } else {
-      clickHandler?.HandleClick();
-
+        clickHandler?.HandleClick();
       }
     }
 
     void OnMouseDown() {
       Damage();
     }
+
 }

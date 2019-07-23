@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TreeClickHandler : ClickHandlerBase
 {
    private RockGetHit particles;
@@ -11,6 +12,8 @@ public class TreeClickHandler : ClickHandlerBase
     private GameEvent onDamaged;
     [SerializeField]
     private GameEvent onDie;
+    public List<Resource> deathGains;
+    public GameEvent onResourceUpdated;
   void Start() {
     particles = GetComponent<RockGetHit>();
   }
@@ -21,5 +24,9 @@ public class TreeClickHandler : ClickHandlerBase
   override public void HandleDie() {
     particles.InstantiateRocks(7);
     onDie.Raise();
+    foreach(Resource r in deathGains) {
+      r.resource.Value += r.amount;
+    }
+    onResourceUpdated.Raise();
   }
 }

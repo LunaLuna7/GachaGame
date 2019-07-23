@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 5829590357408624762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2649, y: 1.2649, z: 1.2649}
   m_Children:
   - {fileID: 703347688636909897}
   - {fileID: 2486488660908518985}
@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2486488660908518985
 Transform:
   m_ObjectHideFlags: 0
@@ -56,8 +56,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6631002330300622419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.59, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.43, z: 0}
+  m_LocalScale: {x: 0.6458103, y: 0.6458103, z: 0.6458103}
   m_Children:
   - {fileID: 523545333821645627}
   - {fileID: 523545334010360415}
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44106605e57c844c19b50aa556a83b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
+  life: 1
   healthPip: {fileID: 7365621121967999870, guid: befe6407a33b946b9a4c7fb4d41def1f,
     type: 3}
   spawnPips: 0
@@ -143,6 +143,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDamaged: {fileID: 11400000, guid: 35d6cdfc474ef4ea9b2d89237818450c, type: 2}
   onDie: {fileID: 11400000, guid: 322fbeab1404641ac8b34b424570f14c, type: 2}
+  deathGains:
+  - resource:
+      useConstant: 0
+      ConstantValue: 0
+      Variable: {fileID: 11400000, guid: ec4245004efec444e8d37fd0bf2ba3a8, type: 2}
+    amount: 1
+  - resource:
+      useConstant: 0
+      ConstantValue: 0
+      Variable: {fileID: 11400000, guid: b5ce95c6739ad45fa80bd8cd74a269af, type: 2}
+    amount: 1
+  onResourceUpdated: {fileID: 11400000, guid: e72b0842f8aec4049bc38a51e13f01b0, type: 2}
 --- !u!136 &8569877109849531943
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -539,12 +551,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1617812727030398362, guid: 967ad9ad2ef421344883a456900311ac,
+    - target: {fileID: 1617812728883505239, guid: 967ad9ad2ef421344883a456900311ac,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
+      propertyPath: m_LocalScale.x
+      value: 0.50492483
       objectReference: {fileID: 0}
-    - target: {fileID: 1617812727153617373, guid: 967ad9ad2ef421344883a456900311ac,
+    - target: {fileID: 1617812728883505239, guid: 967ad9ad2ef421344883a456900311ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.50492483
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617812728883505239, guid: 967ad9ad2ef421344883a456900311ac,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.50492483
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617812727865589503, guid: 967ad9ad2ef421344883a456900311ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
@@ -554,7 +576,12 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1617812727865589503, guid: 967ad9ad2ef421344883a456900311ac,
+    - target: {fileID: 1617812727153617373, guid: 967ad9ad2ef421344883a456900311ac,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617812727030398362, guid: 967ad9ad2ef421344883a456900311ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
